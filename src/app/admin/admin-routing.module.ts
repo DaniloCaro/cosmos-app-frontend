@@ -3,11 +3,14 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 //Components
 import { AdminPageComponent } from './pages/admin-page/admin-page.component';
+//Guards
+import { UserGuardGuard } from '../guards/user-guard.guard';
 
 const routes: Routes = [
   {
     path:'',
     component: AdminPageComponent,
+    canActivate: [UserGuardGuard]
   }
 ];
 
